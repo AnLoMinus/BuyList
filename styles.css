@@ -1,0 +1,700 @@
+:root {
+  --primary-color: #2196f3;
+  --secondary-color: #1976d2;
+  --accent-color: #ff4081;
+  --background-color: #f5f5f5;
+  --card-background: #ffffff;
+  --text-color: #212121;
+  --text-secondary: #757575;
+  --border-radius: 16px;
+  --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  --header-height: 60px;
+  --bottom-nav-height: 60px;
+}
+
+body {
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+header p {
+  font-size: 0.9rem;
+  margin: 4px 0 0 0;
+  opacity: 0.9;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: var(--primary-color);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "item discount"
+    "shopping summary";
+  gap: 2.5rem;
+}
+
+#itemSection {
+  grid-area: item;
+}
+
+#discountSection {
+  grid-area: discount;
+}
+
+#shoppingSection {
+  grid-area: shopping;
+}
+
+#summarySection {
+  grid-area: summary;
+  padding: 1.5rem;
+}
+
+#summarySection #total {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.whatsapp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.whatsapp-section input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.action-buttons button {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#whatsappButton {
+  background-color: #25d366;
+}
+
+#whatsappButton:hover {
+  background-color: #128c7e;
+}
+
+#copyButton {
+  background-color: var(--primary-color);
+}
+
+#clearButton {
+  background-color: #dc3545;
+}
+
+#clearButton:hover {
+  background-color: #c82333;
+}
+
+.card {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+input,
+select,
+button {
+  width: calc(100% - 2rem);
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(21, 152, 149, 0.3);
+}
+
+button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-top: 1.2rem;
+}
+
+th,
+td {
+  padding: 1.2rem;
+  text-align: right;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+tr {
+  background-color: var(--card-background);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+}
+
+tr:hover {
+  transform: translateY(-3px);
+}
+
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: var(--border-radius);
+  display: none;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "item"
+      "discount"
+      "shopping"
+      "summary";
+  }
+}
+
+footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  margin-top: auto;
+  text-align: center;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer .credits {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.action-buttons button {
+  flex: 1;
+  margin: 0 0.5rem;
+}
+
+.fas,
+.fab {
+  margin-right: 0.5rem;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button:hover {
+  animation: pulse 0.5s infinite;
+}
+
+.table-container {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+#shoppingTable thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+@media screen and (max-width: var(--mobile-breakpoint)) {
+  .container {
+    padding: 10px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .card {
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  input,
+  select,
+  button {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  th,
+  td {
+    padding: 0.8rem;
+    min-width: 100px;
+  }
+
+  .grid-container {
+    padding: 0;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .action-buttons button {
+    margin: 0;
+    width: 100%;
+  }
+
+  #itemSection {
+    width: 100%;
+    max-width: 100vw;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  #addItemForm {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  #addItemForm input,
+  #addItemForm select,
+  #addItemForm button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  .grid-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* מניעת גלישה אופקית */
+  body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* התאמת גודל טקסט */
+  label {
+    font-size: 0.9rem;
+  }
+
+  input::placeholder,
+  select {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 0.5rem;
+  }
+}
+
+.loading {
+  position: relative;
+  opacity: 0.7;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a1a1a;
+    --card-background: #2d2d2d;
+    --text-color: #ffffff;
+  }
+}
+
+#itemSection,
+#discountSection {
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#addItemForm {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  input,
+  select,
+  button {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+  }
+
+  .card {
+    padding: 0.8rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #searchInput,
+  #discountInput,
+  #priceInput,
+  #quantityInput {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .container {
+    padding: 0.5rem;
+  }
+
+  .grid-container {
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  input,
+  select,
+  button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 0.6rem;
+  }
+}
+
+/* עדכון למסכים רחבים */
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+    padding: 2rem;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-areas: "sidebar main";
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* צד ימין - תפריט צד */
+  .sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    top: calc(var(--header-height) + 1rem);
+  }
+
+  #itemSection {
+    margin-bottom: 1rem;
+  }
+
+  /* צד שמאל - תוכן ראשי */
+  .main-content {
+    grid-area: main;
+  }
+
+  #shoppingSection {
+    margin-bottom: 1rem;
+  }
+
+  #summarySection {
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    color: white;
+  }
+
+  #summarySection h2,
+  #summarySection #total {
+    color: white;
+  }
+
+  /* עיצוב טבלה משופר */
+  .table-container {
+    max-height: calc(100vh - var(--header-height) - 200px);
+    overflow-y: auto;
+  }
+
+  /* כפתורי פעולה */
+  .action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .action-buttons button {
+    margin: 0;
+  }
+}
+
+/* שיפורים נוספים למסך רחב */
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .grid-container {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+/* הוספה בסוף הקובץ */
+.whatsapp-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.whatsapp-input input {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  width: auto;
+}
+
+.whatsapp-input button {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25d366;
+}
+
+.whatsapp-input button:hover {
+  background-color: #128c7e;
+}
+
+.whatsapp-input button i {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .whatsapp-input {
+    margin: 0.5rem 0;
+  }
+}
+
+/* התאמה למובייל */
+@media screen and (max-width: 768px) {
+  #summarySection {
+    padding: 1rem;
+  }
+
+  .action-buttons {
+    gap: 0.8rem;
+  }
+
+  .whatsapp-section input {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .action-buttons button {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}

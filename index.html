@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ניהול רשימת קניות - כלי מקצועי</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="כלי מקצועי לניהול רשימות קניות וחישוב הנחות">
+    <meta name="theme-color" content="#1a5f7a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <header role="banner">
+        <h1><i class="fas fa-shopping-cart" aria-hidden="true"></i> ניהול רשימת קניות מקצועי</h1>
+        <p><i class="fas fa-calculator" aria-hidden="true"></i> כלי יעיל לניהול הקניות שלך וחישוב הנחות</p>
+    </header>
+
+    <main role="main" class="container">
+        <div class="grid-container">
+            <!-- צד ימין - סיידבר -->
+            <div class="sidebar">
+                <section class="card" id="itemSection" aria-labelledby="itemSectionHeader">
+                    <h2 id="itemSectionHeader"><i class="fas fa-plus-circle" aria-hidden="true"></i> הוספת פריט</h2>
+                    <div id="alert" class="alert" role="alert" aria-live="assertive"><i
+                            class="fas fa-exclamation-triangle" aria-hidden="true"></i> אנא מלא את כל השדות לפני הוספה.
+                    </div>
+                    <form id="addItemForm">
+                        <label for="categoryInput"><i class="fas fa-tags" aria-hidden="true"></i> קטגוריה:</label>
+                        <select id="categoryInput" onchange="populateItems()" required>
+                            <option value="">בחר קטגוריה</option>
+                        </select>
+
+                        <label for="itemInput"><i class="fas fa-box" aria-hidden="true"></i> פריט:</label>
+                        <select id="itemInput" required>
+                            <option value="">בחר פריט</option>
+                        </select>
+
+                        <label for="priceInput"><i class="fas fa-shekel-sign" aria-hidden="true"></i> מחיר:</label>
+                        <input type="number" id="priceInput" placeholder="הכנס מחיר" min="0" step="0.01" required>
+
+                        <label for="quantityInput"><i class="fas fa-sort-numeric-up" aria-hidden="true"></i>
+                            כמות:</label>
+                        <input type="number" id="quantityInput" placeholder="כמות" min="1" value="1" required>
+
+                        <button type="button" onclick="addItem()"><i class="fas fa-cart-plus" aria-hidden="true"></i>
+                            הוסף
+                            לרשימה</button>
+                    </form>
+                </section>
+
+                <section class="card" id="discountSection" aria-labelledby="discountSectionHeader"
+                    style="display: none;">
+                    <h2 id="discountSectionHeader"><i class="fas fa-search-dollar" aria-hidden="true"></i> חיפוש והנחה
+                    </h2>
+                    <label for="searchInput"><i class="fas fa-search" aria-hidden="true"></i> חיפוש מוצר:</label>
+                    <input type="text" id="searchInput" placeholder="חפש מוצר" oninput="searchItem()">
+
+                    <label for="discountInput"><i class="fas fa-percent" aria-hidden="true"></i> אחוז הנחה:</label>
+                    <input type="number" id="discountInput" placeholder="אחוז הנחה" min="0" max="100">
+
+                    <button onclick="applyDiscount()"><i class="fas fa-tag" aria-hidden="true"></i> החל הנחה</button>
+                </section>
+            </div>
+
+            <!-- צד שמאל - תוכן ראשי -->
+            <div class="main-content">
+                <section class="card" id="shoppingSection" aria-labelledby="shoppingSectionHeader">
+                    <h2 id="shoppingSectionHeader"><i class="fas fa-shopping-basket" aria-hidden="true"></i> רשימת קניות
+                    </h2>
+                    <div class="table-container">
+                        <table id="shoppingTable" aria-label="רשימת קניות">
+                            <caption class="sr-only">רשימת הקניות שלך</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><i class="fas fa-tags" aria-hidden="true"></i> קטגוריה</th>
+                                    <th scope="col"><i class="fas fa-box" aria-hidden="true"></i> מוצר</th>
+                                    <th scope="col"><i class="fas fa-shekel-sign" aria-hidden="true"></i> מחיר ליחידה
+                                    </th>
+                                    <th scope="col"><i class="fas fa-sort-numeric-up" aria-hidden="true"></i> כמות</th>
+                                    <th scope="col"><i class="fas fa-calculator" aria-hidden="true"></i> סכום כולל</th>
+                                    <th scope="col"><i class="fas fa-cogs" aria-hidden="true"></i> פעולות</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="card" id="summarySection" aria-labelledby="summarySectionHeader">
+                    <h2 id="summarySectionHeader"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i> סיכום
+                    </h2>
+                    <div id="total" aria-live="polite">
+                        <i class="fas fa-money-bill-wave" aria-hidden="true"></i> סכום כולל: ₪0.00
+                    </div>
+                    <div class="action-buttons">
+                        <button id="copyButton" onclick="copyInvoice()">
+                            <i class="fas fa-copy" aria-hidden="true"></i> העתק חשבונית
+                        </button>
+                        <div class="whatsapp-section">
+                            <input type="tel" id="phoneInput" placeholder="הכנס מספר טלפון" pattern="[0-9]{10}"
+                                title="נא להזין מספר טלפון תקין (10 ספרות)" maxlength="10">
+                            <button id="whatsappButton" onclick="sendToNumber()">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> שלח בוואטסאפ
+                            </button>
+                        </div>
+                        <button id="clearButton" onclick="clearAll()">
+                            <i class="fas fa-trash-alt" aria-hidden="true"></i> נקה הכל
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p><i class="fas fa-code" aria-hidden="true"></i> פותח על ידי Claude והמשתמש כפרויקט קוד פתוח. &copy; 2024 כל
+            הזכויות שמורות.</p>
+        <p><a href="https://github.com/AnLoMinus/BuyList" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-github" aria-hidden="true"></i> קוד מקור ב-GitHub</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <div id="systemMessages" class="system-messages" role="alert" aria-live="polite"></div>
+</body>
+
+</html>
