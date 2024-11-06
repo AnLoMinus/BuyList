@@ -1,0 +1,48 @@
+{
+  "name": "🌱 תפריט טבעוני שבועי",
+  "description": "רשימת קניות לתפריט טבעוני לשבוע",
+  "items": [
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 חסה",
+      "quantity": 2,
+      "estimatedPrice": 6
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥕 גזר",
+      "quantity": 5,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥦 ברוקולי",
+      "quantity": 2,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🫘 קטניות",
+      "item": "🫘 עדשים שחורות",
+      "quantity": 2,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🫘 קטניות",
+      "item": "🫘 חומוס",
+      "quantity": 2,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🥫 מוצרים יבשים",
+      "item": "🌾 קינואה",
+      "quantity": 1,
+      "estimatedPrice": 15
+    },
+    {
+      "category": "🥜 אגוזים",
+      "item": "🥜 שקדים",
+      "quantity": 1,
+      "estimatedPrice": 25
+    }
+  ]
+}

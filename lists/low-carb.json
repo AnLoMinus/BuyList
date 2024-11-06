@@ -1,0 +1,48 @@
+{
+  "name": "🥗 דל פחמימות",
+  "description": "רשימת קניות לתפריט דל פחמימות",
+  "items": [
+    {
+      "category": "🥩 בשרים",
+      "item": "🥩 חזה עוף",
+      "quantity": 4,
+      "estimatedPrice": 25
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 ברוקולי",
+      "quantity": 2,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 כרובית",
+      "quantity": 1,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🥚 ביצים",
+      "item": "🥚 ביצים",
+      "quantity": 12,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🧀 מוצרי חלב",
+      "item": "🧀 גבינת מוצרלה",
+      "quantity": 2,
+      "estimatedPrice": 12
+    },
+    {
+      "category": "🥜 אגוזים",
+      "item": "🥜 שקדים",
+      "quantity": 1,
+      "estimatedPrice": 25
+    },
+    {
+      "category": "🥑 שמנים",
+      "item": "🥑 אבוקדו",
+      "quantity": 2,
+      "estimatedPrice": 8
+    }
+  ]
+}

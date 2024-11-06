@@ -1,0 +1,48 @@
+{
+  "name": "🌿 סוכות",
+  "description": "רשימת קניות לחג הסוכות",
+  "items": [
+    {
+      "category": "🌿 ארבעת המינים",
+      "item": "🌿 לולב",
+      "quantity": 1,
+      "estimatedPrice": 80
+    },
+    {
+      "category": "🌿 ארבעת המינים",
+      "item": "🌿 אתרוג",
+      "quantity": 1,
+      "estimatedPrice": 100
+    },
+    {
+      "category": "🌿 ארבעת המינים",
+      "item": "🌿 הדס",
+      "quantity": 3,
+      "estimatedPrice": 20
+    },
+    {
+      "category": "🌿 ארבעת המינים",
+      "item": "🌿 ערבה",
+      "quantity": 2,
+      "estimatedPrice": 10
+    },
+    {
+      "category": "🏠 קישוטים",
+      "item": "🎈 קישוטים לסוכה",
+      "quantity": 1,
+      "estimatedPrice": 50
+    },
+    {
+      "category": "🥖 מוצרי אפייה",
+      "item": "🥖 חלות",
+      "quantity": 2,
+      "estimatedPrice": 16
+    },
+    {
+      "category": "🍷 משקאות",
+      "item": "🍷 יין",
+      "quantity": 2,
+      "estimatedPrice": 40
+    }
+  ]
+}

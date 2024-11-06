@@ -1,0 +1,48 @@
+{
+  "name": "🔥 מנגל",
+  "description": "רשימת קניות למנגל משפחתי",
+  "items": [
+    {
+      "category": "🥩 בשרים",
+      "item": "🥩 אנטריקוט",
+      "quantity": 2,
+      "estimatedPrice": 140
+    },
+    {
+      "category": "🥩 בשרים",
+      "item": "🍗 כנפיים",
+      "quantity": 2,
+      "estimatedPrice": 30
+    },
+    {
+      "category": "🥩 בשרים",
+      "item": "🍖 קבב",
+      "quantity": 10,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🧅 בצל",
+      "quantity": 3,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🫑 פלפל",
+      "quantity": 4,
+      "estimatedPrice": 3
+    },
+    {
+      "category": "🥖 מוצרי אפייה",
+      "item": "🫓 פיתות",
+      "quantity": 10,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🥤 משקאות",
+      "item": "🍺 בירה",
+      "quantity": 6,
+      "estimatedPrice": 12
+    }
+  ]
+}

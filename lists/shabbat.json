@@ -1,0 +1,48 @@
+{
+  "name": "✡️ קניות לשבת",
+  "description": "רשימת קניות לארוחות שבת",
+  "items": [
+    {
+      "category": "🥖 מוצרי אפייה",
+      "item": "🥖 חלות",
+      "quantity": 2,
+      "estimatedPrice": 16
+    },
+    {
+      "category": "🍷 משקאות",
+      "item": "🍷 יין לקידוש",
+      "quantity": 1,
+      "estimatedPrice": 30
+    },
+    {
+      "category": "🥩 בשרים",
+      "item": "🍗 עוף שלם",
+      "quantity": 1,
+      "estimatedPrice": 35
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 חסה",
+      "quantity": 1,
+      "estimatedPrice": 6
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥒 מלפפונים",
+      "quantity": 4,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🍅 עגבניות",
+      "quantity": 4,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🥫 מוצרים יבשים",
+      "item": "🍚 אורז",
+      "quantity": 1,
+      "estimatedPrice": 12
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "🧺 פיקניק",
+  "description": "רשימת קניות לפיקניק משפחתי",
+  "items": [
+    {
+      "category": "🥖 מוצרי אפייה",
+      "item": "🥖 לחמניות",
+      "quantity": 8,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🧀 מוצרי חלב",
+      "item": "🧀 גבינה צהובה",
+      "quantity": 1,
+      "estimatedPrice": 15
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥒 מלפפונים",
+      "quantity": 3,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🍅 עגבניות",
+      "quantity": 4,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🥤 משקאות",
+      "item": "💧 בקבוקי מים",
+      "quantity": 4,
+      "estimatedPrice": 5
+    },
+    {
+      "category": "🍫 חטיפים",
+      "item": "🥨 חטיפים מלוחים",
+      "quantity": 3,
+      "estimatedPrice": 12
+    },
+    {
+      "category": "🍎 פירות",
+      "item": "🍎 תפוחים",
+      "quantity": 4,
+      "estimatedPrice": 3
+    }
+  ]
+}

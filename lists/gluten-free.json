@@ -1,0 +1,42 @@
+{
+  "name": "🌾 ללא גלוטן",
+  "description": "רשימת קניות לתפריט ללא גלוטן",
+  "items": [
+    {
+      "category": "🥖 מוצרי אפייה",
+      "item": "🍞 לחם ללא גלוטן",
+      "quantity": 1,
+      "estimatedPrice": 25
+    },
+    {
+      "category": "🥫 מוצרים יבשים",
+      "item": "🍚 אורז",
+      "quantity": 1,
+      "estimatedPrice": 12
+    },
+    {
+      "category": "🥫 מוצרים יבשים",
+      "item": "🌾 קינואה",
+      "quantity": 1,
+      "estimatedPrice": 20
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥔 תפוח אדמה",
+      "quantity": 4,
+      "estimatedPrice": 3
+    },
+    {
+      "category": "🥩 בשרים",
+      "item": "🍗 חזה עוף",
+      "quantity": 2,
+      "estimatedPrice": 25
+    },
+    {
+      "category": "🥜 אגוזים",
+      "item": "🥜 אגוזי מלך",
+      "quantity": 1,
+      "estimatedPrice": 20
+    }
+  ]
+}

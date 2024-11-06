@@ -1,0 +1,60 @@
+{
+  "name": "🍎 ראש השנה",
+  "description": "רשימת קניות לארוחות ראש השנה",
+  "items": [
+    {
+      "category": "🍎 פירות",
+      "item": "🍎 תפוח",
+      "quantity": 2,
+      "estimatedPrice": 15
+    },
+    {
+      "category": "🍯 מוצרים יבשים",
+      "item": "🍯 דבש",
+      "quantity": 1,
+      "estimatedPrice": 25
+    },
+    {
+      "category": "🍎 פירות",
+      "item": "🍎 רימון",
+      "quantity": 2,
+      "estimatedPrice": 20
+    },
+    {
+      "category": "🐟 דגים",
+      "item": "🐟 ראש דג",
+      "quantity": 1,
+      "estimatedPrice": 40
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥕 גזר",
+      "quantity": 1,
+      "estimatedPrice": 6
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🧅 סלק",
+      "quantity": 4,
+      "estimatedPrice": 5
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 כרתי",
+      "quantity": 2,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 תמר",
+      "quantity": 1,
+      "estimatedPrice": 25
+    },
+    {
+      "category": "🥖 מוצרי אפייה",
+      "item": "🥖 חלות עגולות",
+      "quantity": 2,
+      "estimatedPrice": 16
+    }
+  ]
+}

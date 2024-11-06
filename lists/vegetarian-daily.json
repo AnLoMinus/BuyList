@@ -1,0 +1,36 @@
+{
+  "name": "🥗 תפריט צמחוני יומי",
+  "description": "רשימת קניות לתפריט צמחוני ליום",
+  "items": [
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 חסה",
+      "quantity": 1,
+      "estimatedPrice": 6
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🍅 עגבניות",
+      "quantity": 4,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥒 מלפפונים",
+      "quantity": 3,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🫘 קטניות",
+      "item": "🫘 עדשים",
+      "quantity": 1,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🥖 מוצרי אפייה",
+      "item": "🍞 לחם מלא",
+      "quantity": 1,
+      "estimatedPrice": 12
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "🫓 פסח",
+  "description": "רשימת קניות לחג הפסח",
+  "items": [
+    {
+      "category": "🥖 מוצרי אפייה",
+      "item": "🫓 מצות",
+      "quantity": 2,
+      "estimatedPrice": 25
+    },
+    {
+      "category": "🍷 משקאות",
+      "item": "🍷 יין אדום",
+      "quantity": 4,
+      "estimatedPrice": 40
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 חסה",
+      "quantity": 2,
+      "estimatedPrice": 6
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 מרור",
+      "quantity": 1,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 כרפס",
+      "quantity": 1,
+      "estimatedPrice": 6
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 תפוח אדמה",
+      "quantity": 1,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🥚 ביצים",
+      "item": "🥚 ביצים",
+      "quantity": 12,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🥫 מוצרים יבשים",
+      "item": "🥜 אגוזים",
+      "quantity": 1,
+      "estimatedPrice": 25
+    },
+    {
+      "category": "🥩 בשרים",
+      "item": "🍖 זרוע",
+      "quantity": 1,
+      "estimatedPrice": 40
+    }
+  ]
+}

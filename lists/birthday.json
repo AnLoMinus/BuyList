@@ -1,0 +1,42 @@
+{
+  "name": "🎂 מסיבת יום הולדת",
+  "description": "רשימת קניות למסיבת יום הולדת",
+  "items": [
+    {
+      "category": "🍰 מאפים",
+      "item": "🎂 עוגת יום הולדת",
+      "quantity": 1,
+      "estimatedPrice": 120
+    },
+    {
+      "category": "🥤 משקאות",
+      "item": "🥤 קולה",
+      "quantity": 4,
+      "estimatedPrice": 7
+    },
+    {
+      "category": "🥤 משקאות",
+      "item": "🥤 ספרייט",
+      "quantity": 4,
+      "estimatedPrice": 7
+    },
+    {
+      "category": "🍫 חטיפים וממתקים",
+      "item": "🍫 חטיפים מעורבים",
+      "quantity": 10,
+      "estimatedPrice": 5
+    },
+    {
+      "category": "🎈 קישוטים",
+      "item": "🎈 בלונים",
+      "quantity": 20,
+      "estimatedPrice": 2
+    },
+    {
+      "category": "🎈 קישוטים",
+      "item": "🎊 קונפטי",
+      "quantity": 2,
+      "estimatedPrice": 15
+    }
+  ]
+}

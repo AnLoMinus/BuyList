@@ -1,0 +1,48 @@
+{
+  "name": "🥛 שבועות",
+  "description": "רשימת קניות לחג השבועות",
+  "items": [
+    {
+      "category": "🥛 מוצרי חלב",
+      "item": "🧀 גבינה צהובה",
+      "quantity": 2,
+      "estimatedPrice": 30
+    },
+    {
+      "category": "🥛 מוצרי חלב",
+      "item": "🧀 גבינה לבנה",
+      "quantity": 2,
+      "estimatedPrice": 15
+    },
+    {
+      "category": "🥛 מוצרי חלב",
+      "item": "🧀 גבינת שמנת",
+      "quantity": 2,
+      "estimatedPrice": 12
+    },
+    {
+      "category": "🥛 מוצרי חלב",
+      "item": "🥛 שמנת מתוקה",
+      "quantity": 2,
+      "estimatedPrice": 15
+    },
+    {
+      "category": "🥖 מוצרי אפייה",
+      "item": "🥧 בצק עלים",
+      "quantity": 2,
+      "estimatedPrice": 18
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🥬 תרד",
+      "quantity": 2,
+      "estimatedPrice": 8
+    },
+    {
+      "category": "🥬 ירקות",
+      "item": "🧅 בצל",
+      "quantity": 3,
+      "estimatedPrice": 3
+    }
+  ]
+}

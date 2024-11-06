@@ -1,4 +1,5 @@
 let totalAmount = 0;
+let templates = {};
 
 const categories = {
   "🥬 ירקות": [
@@ -277,15 +278,8 @@ function addItem() {
   totalAmount += parseFloat(totalPrice);
 
   const deleteCell = row.insertCell(5);
-  const deleteButton = document.createElement("button");
-  deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
-  deleteButton.onclick = () => {
-    totalAmount -= parseFloat(totalPrice);
-    row.remove();
-    updateTotal();
-    saveToLocalStorage();
-  };
-  deleteCell.appendChild(deleteButton);
+  deleteCell.style.textAlign = "center";
+  deleteCell.innerHTML = `<span class="delete-btn" onclick="deleteRow(this)">🗑️</span>`;
 
   updateTotal();
   clearInputs();
@@ -407,15 +401,7 @@ function loadFromLocalStorage() {
     totalAmount += parseFloat(item.total);
 
     const deleteCell = row.insertCell(5);
-    const deleteButton = document.createElement("button");
-    deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
-    deleteButton.onclick = () => {
-      totalAmount -= parseFloat(item.total);
-      row.remove();
-      updateTotal();
-      saveToLocalStorage();
-    };
-    deleteCell.appendChild(deleteButton);
+    deleteCell.innerHTML = `<span style="cursor: pointer; font-size: 1.2rem;" onclick="deleteRow(this)">🗑️</span>`;
   });
   updateTotal();
 }
@@ -444,8 +430,111 @@ function generateInvoiceText() {
   return textToSend;
 }
 
+async function loadAllTemplates() {
+  try {
+    const templateNames = [
+      "birthday",
+      "vegetarian-daily",
+      "vegan-weekly",
+      "shabbat",
+      "bbq",
+      "rosh-hashana",
+      "pesach",
+      "shavuot",
+      "sukkot",
+      "picnic",
+      "low-carb",
+      "gluten-free",
+    ];
+    for (const name of templateNames) {
+      const response = await fetch(`lists/${name}.json`);
+      templates[name] = await response.json();
+    }
+  } catch (error) {
+    console.error("Error loading templates:", error);
+  }
+}
+
+function loadTemplate() {
+  const templateName = document.getElementById("templateSelect").value;
+  if (!templateName) return;
+
+  const template = templates[templateName];
+  if (!template) return;
+
+  // נקה את הטבלה הקיימת
+  document.querySelector("#shoppingTable tbody").innerHTML = "";
+  totalAmount = 0;
+
+  // הוסף את כל הפריטים מהתבנית
+  template.items.forEach((item) => {
+    const table = document
+      .getElementById("shoppingTable")
+      .querySelector("tbody");
+    const row = table.insertRow();
+
+    row.insertCell(0).textContent = item.category;
+    row.insertCell(1).textContent = item.item;
+    row.insertCell(2).textContent = item.estimatedPrice.toFixed(2);
+    row.insertCell(3).textContent = item.quantity;
+
+    const totalPrice = (item.estimatedPrice * item.quantity).toFixed(2);
+    row.insertCell(4).textContent = totalPrice;
+    totalAmount += parseFloat(totalPrice);
+
+    // הוסף כפתור מחיקה
+    const deleteCell = row.insertCell(5);
+    deleteCell.innerHTML = `<span style="cursor: pointer; font-size: 1.2rem;" onclick="deleteRow(this)">🗑️</span>`;
+  });
+
+  updateTotal();
+  saveToLocalStorage();
+}
+
+function makeEditable() {
+  const table = document.getElementById("shoppingTable");
+
+  table.addEventListener("click", (e) => {
+    // בדוק אם לחצו על תא מחיר
+    if (e.target.cellIndex === 2 || e.target.parentElement?.cellIndex === 2) {
+      const cell = e.target.cellIndex === 2 ? e.target : e.target.parentElement;
+      const row = cell.parentElement;
+      const currentPrice = parseFloat(cell.textContent);
+
+      const newPrice = prompt("הכנס מחיר חדש:", currentPrice);
+
+      if (newPrice !== null && !isNaN(newPrice)) {
+        const quantity = parseInt(row.cells[3].textContent);
+        const oldTotal = parseFloat(row.cells[4].textContent);
+
+        // עדכן את המחיר ואת הסכום הכולל
+        cell.textContent = parseFloat(newPrice).toFixed(2);
+        const newTotal = (newPrice * quantity).toFixed(2);
+        row.cells[4].textContent = newTotal;
+
+        // עדכן את הסכום הכללי
+        totalAmount = totalAmount - oldTotal + parseFloat(newTotal);
+        updateTotal();
+        saveToLocalStorage();
+      }
+    }
+  });
+}
+
+// פונקציה חדשה למחיקת שורה
+function deleteRow(element) {
+  const row = element.closest("tr");
+  const total = parseFloat(row.cells[4].textContent);
+  totalAmount -= total;
+  row.remove();
+  updateTotal();
+  saveToLocalStorage();
+}
+
 // Initialize the page
 document.addEventListener("DOMContentLoaded", () => {
   populateCategories();
   loadFromLocalStorage();
+  loadAllTemplates();
+  makeEditable();
 });
