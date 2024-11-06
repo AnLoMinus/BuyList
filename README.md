@@ -1,6 +1,6 @@
 # ניהול רשימת קניות - כלי מקצועי
 
-<img width="1680" alt="image" src="https://github.com/user-attachments/assets/64fc9603-820a-4207-9e01-943c192cc0b3">
+<img width="1680" alt="image" src="https://github.com/user-attachments/assets/3de444bf-1d3b-4dfb-b53d-4e5214b3f191">
 
 כלי פשוט ויעיל לניהול רשימות קניות וחישוב הנחות. הפרויקט נכתב ב-HTML, CSS, ו-JavaScript טהור.
 
